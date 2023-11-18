@@ -63,7 +63,7 @@ fetch('https://api.thecatapi.com/v1/breeds')
           breedSelect.addEventListener('change', () => {
           const selectedBreedId = breedSelect.value;
             if (selectedBreedId) {
-              showLoader();
+              // showLoader();
               showSelect();
             fetchCatByBreed(selectedBreedId)
               .then(response => {
