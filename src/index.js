@@ -38,8 +38,14 @@ fetch('https://api.thecatapi.com/v1/breeds')
       breedSelect.style.display = 'none';
       catInfo.style.display = 'none';
       error.style.display = 'none';
-    };
+};
     
+    const showSelect = () => {
+      loader.style.display = 'block';
+      catInfo.style.display = 'none';
+      error.style.display = 'none';
+}; 
+     
     const hideLoader = () => {
       loader.style.display = 'none';
       breedSelect.style.display = 'block';
@@ -57,7 +63,8 @@ fetch('https://api.thecatapi.com/v1/breeds')
           breedSelect.addEventListener('change', () => {
           const selectedBreedId = breedSelect.value;
             if (selectedBreedId) {
-            showLoader();
+              showLoader();
+              showSelect();
             fetchCatByBreed(selectedBreedId)
               .then(response => {
                 hideLoader();
